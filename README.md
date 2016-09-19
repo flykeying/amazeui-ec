@@ -1,4 +1,4 @@
-# amazeui-ecui
+# amazeui-ec
 
 Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](https://github.com/vuejs/vue)
 
