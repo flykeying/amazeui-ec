@@ -15,7 +15,7 @@ Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](ht
 ## Installation
 
 ### NPM
-`npm install amazeui-ecui`
+`npm install amazeui-ec`
 
 ```javascript
 
