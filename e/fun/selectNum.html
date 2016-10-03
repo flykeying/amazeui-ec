@@ -51,16 +51,16 @@
     <div class="am-u-sm-9 info am-padding-lg showMi">
         <h3>数量选择控件</h3>
         <div id="selectNum">
-            <input type="text" class="am-form-field wos-selectNum-btn" placeholder="-" >
+            <button type="button" class="am-btn am-btn-default am-fl wos-selectNum-btn" disabled>-</button><input type="text" class="am-form-field am-fl wos-selectNum-text" /><button type="button" class="am-btn am-fl am-btn-default wos-selectNum-btn" >+</button>
         </div>
         <style>
             .wos-selectNum-btn{
-                width: 35px;
-                height: 35px;
-                font-size: 150%;
-                text-align: center;
-
                 margin: 0;
+            }
+            .wos-selectNum-text{
+                width: 35px;
+                border-left: 0px;
+                border-right: 0px;
             }
         </style>
         <h3>源码</h3>
@@ -90,6 +90,6 @@
 
 </body>
 <script src="../../lib/jquery.min.js"></script>
-<script src="../../lib/amazeui/amazeui.min.js"></script>
+<script src="../../lib/amazeui/js/amazeui.min.js"></script>
 
 </html>
