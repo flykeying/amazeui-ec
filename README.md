@@ -1,4 +1,4 @@
-# amazeui-ec
+# amazeui-ecui
 
 Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](https://github.com/vuejs/vue)
 
@@ -8,14 +8,14 @@ Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](ht
 
 注意：ECUI的组件属于电商环境，将不再考虑响应式、移动优先的策略。组件分为移动版和PC版两个部分
 
-- [ ] 用户体验至上：每一个组件的开发都要最大的满足访问者的使用习惯和操作的流畅性。
+- [ ] 每一个组件的开发都要最大程度的满足访问者的使用习惯和操作的流畅性。以用户的感受来评判组件的实用性。不需要漂亮炫耀的组件，只要温文尔雅的工具。
 - [ ] 更贴近后端的程序架构设计，所有数据json化处理。让UI更符合实战需求。
 - [ ] 继承了来自AmazeUI的框架标准，在原有的基础上Vue组件化。对数据响应，单向数据流和双向数据绑定优势更突出。（下个版本退出vuex）
 
 ## Installation
 
 ### NPM
-`npm install amazeui-ec`
+`npm install amazeui-ecui`
 
 ```javascript
 
