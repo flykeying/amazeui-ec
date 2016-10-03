@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECUI-电商平台的交互UI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="参与 Amaze UI 插件大赛的比赛作品">
+    <meta name="keywords" content="AmazeUI,电商UI">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="../../src/images/ico/ico32.ico">
+    <link rel="stylesheet" href="../../lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../src/css/layout-page.css">
+    <link rel="stylesheet" href="../../lib/github-gist.min.css">
+    <script src="../../lib/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../lib/vue/vue.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="wos">
+        <h1 class="am-fl"><a href="/">AmazeUI-ec</a></h1>
+        <nav class="am-fr">
+            <a v-for="item of nav" href="{{item.url}}">{{item.name}}</a>
+        </nav>
+    </div>
+</header>
+
+<div class="am-g main pagewidth">
+    <div class="am-u-sm-3 menu am-padding-lg">
+        <h1>功能扩展</h1>
+        <hr>
+        <div id="funNav">
+            <ul>
+                <li v-for="item of nav">
+                    <div v-if="item.url == 'pre-search.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="/src/js/nav.js"></script>
+    </div>
+    <div class="am-u-sm-9 info am-padding-lg showMi">
+        <h3>预加载搜索框</h3>
+        <p class="remarks">测试数据请搜索“金锣”</p>
+        <div style="height: 38px;">
+            <div id="search" ></div>
+        </div>
+
+
+
+
+        <template id="pre-search">
+                <div class="wos-search-basic">
+                    <i class="am-icon-search"></i>
+                    <input type="text" placeholder="大鱼海棠" v-model="keywords"  v-on:click="searchShow(1)" v-on:blur="searchShow(0)">
+                    <button type="button" class="am-btn am-btn-primary am-fr">搜索</button>
+                    <a href="#" class="am-fr chart"><i class="am-icon-bar-chart"></i></a>
+                </div>
+                <div class="wos-pre-search"  v-show="preShow">
+                    <div v-if="keywords.length">
+                        <div class="wos-pre-search-title" v-show="sb">
+                            <div class="am-fl">搜索关键词：{{keywords}}</div>
+                            <div class="am-fr"><a href="#"><i class="am-icon-trash"></i> 清空</a></div>
+                        </div>
+                        <ul>
+                            <li v-show="sb" v-on:click="searchUrl(item.url)" v-for="item of cacheKeywords | filterBy keywords in 'words' " @click="search()">
+                                {{ item.words }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-else v-show="preShow">
+                        <div class="wos-pre-search-title" v-show="sb">
+                            <div class="am-fl">历史搜索: </div>
+                            <div class="am-fr"><a href="#"><i class="am-icon-trash"></i> 清空</a></div>
+                        </div>
+                        <ul>
+                            <li v-show="sb" v-on:click="searchLocal(item)" v-for="item of historyData | limitBy historyDataNum" >
+                                {{ item }}
+                            </li>
+                            <hr>
+                            <li v-show="sb" v-on:click="searchUrl(item.url)" v-for="item of recommend | limitBy recommendNum" @click="search()" class="wos-ol wos-ol-{{ $index+1 }}">
+                                <span>{{ $index+1 }}. </span>{{ item.words }}
+                            </li>
+                            <div v-show="sb" class="am-fr wos-search-more">
+                                <a href="#" class="am-fr chart">
+                                    <i class="am-icon-bar-chart"></i> 今日热搜
+                                </a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+        </template>
+
+
+        <script>
+            historyData=['榴莲','百香果','泰国芒果','山东大苹果','广德鸭梨','新疆葡萄干','海南椰子'];
+            recommend=[
+                { words:'阿根廷红虾2kg/包 ￥158',url:'search.html?k=关键词或产品链接'},
+                { words:'加拿大AAA级西冷牛排250g ￥75',url:'search.html?k=关键词或产品链接'},
+                { words:'越南草虾(16-20只）400g ￥35',url:'search.html?k=关键词或产品链接'},
+                { words:'澳洲草饲西冷牛排500g*2 牛扒 ￥138',url:'search.html?k=关键词或产品链接'},
+                { words:'乌拉圭牛尾切片500g*2 牛肉 ￥92',url:'search.html?k=关键词或产品链接'},
+                { words:'厄瓜多尔白虾2kg(50-60只/kg) 白虾 ￥149',url:'search.html?k=关键词或产品链接'}
+            ];
+            cacheKeywords = [
+                { words:'虾米',url:'search.html?k=关键词或产品链接'},
+                { words:'金锣优养冰鲜带筋猪蹄',url:'search.html?k=关键词或产品链接'},
+                { words:'金锣优养冰鲜汤排',url:'search.html?k=关键词或产品链接'},
+                { words:'易家菜园苍山山药',url:'search.html?k=关键词或产品链接'},
+                { words:'潮香村黑椒牛排',url:'search.html?k=关键词或产品链接'},
+                { words:'蔬氏意式沙拉',url:'search.html?k=关键词或产品链接'},
+                { words:'美威欧式三文鱼排',url:'search.html?k=关键词或产品链接'},
+                { words:'澳洲草饲西冷牛排',url:'search.html?k=关键词或产品链接'},
+                { words:'阿根廷红虾',url:'search.html?k=关键词或产品链接'},
+                { words:'西冷牛排',url:'search.html?k=关键词或产品链接'},
+                { words:'越南草虾',url:'search.html?k=关键词或产品链接'},
+                { words:'澳洲草饲西冷牛排',url:'search.html?k=关键词或产品链接'},
+                { words:'乌拉圭牛尾切片',url:'search.html?k=关键词或产品链接'},
+                { words:'厄瓜多尔白虾',url:'search.html?k=关键词或产品链接'},
+                { words:'山东甜玉米',url:'search.html?k=关键词或产品链接'},
+                { words:'昆明黄秋葵 ',url:'search.html?k=关键词或产品链接'},
+                { words:'精选胡萝卜',url:'search.html?k=关键词或产品链接'},
+                { words:'大蛤蜊肉',url:'search.html?k=关键词或产品链接'},
+                { words:'优质香菇',url:'search.html?k=关键词或产品链接'},
+                { words:'厄瓜多尔白虾',url:'search.html?k=关键词或产品链接'},
+                { words:'金锣优养冰鲜汤排',url:'search.html?k=关键词或产品链接'},
+                { words:'精选甜玉米',url:'search.html?k=关键词或产品链接'},
+                { words:'新鲜本地甘蓝',url:'search.html?k=关键词或产品链接'},
+                { words:'易家菜园西湖莼菜',url:'search.html?k=关键词或产品链接'},
+                { words:'黄瓜',url:'search.html?k=关键词或产品链接'},
+                { words:'越南草虾仁',url:'search.html?k=关键词或产品链接'}
+            ];
+            var vm = new Vue({
+                el: '#search',
+                data: {
+                    message: 'Hello Vue.js!',
+                    mainWidth:"500px",
+                    sb:true,
+                    historyData:historyData,
+                    historyDataNum:5,//历史数据读取数量
+                    recommend:recommend,
+                    recommendNum:5,//推荐数据读取数量
+                    keywords:'',
+                    cacheKeywords:cacheKeywords,
+                    preShow:false
+                },
+                template:"#pre-search",
+                methods:{
+                    searchShow:function(n){
+                        if (n==1){
+                            this.preShow = true
+                        }else{
+                            setTimeout(function(){
+                                vm.preShow = false
+                            },100)
+
+                        }
+                    },
+                    searchLocal:function(keywords){
+                        window.open("search.html?k=" + keywords);
+                    },
+                    searchUrl:function(url){
+                        window.open(url);
+                    }
+                }
+            })
+        </script>
+
+        <style>
+            .wos-search-basic{
+                padding: 5px 0px  0px 10px;
+                border: 1px solid #0e90d2;
+                height: 39px;
+                color: #0e90d2;
+                overflow: hidden;
+                background-color: #fff;
+                position: absolute;
+                z-index: 9;
+                width: 500px;
+            }
+            .wos-search-basic input{
+                border: 0px;
+                margin-top: -5px;
+                outline:none;
+                width: 70%;
+            }
+            .wos-search-basic button{
+                margin:-5px -2px 0 0;
+            }
+            .chart{
+                padding-right: 10px;
+            }
+            .wos-pre-search{
+                border: 1px solid #0e90d2;
+                border-top: 0px;
+                position: absolute;
+                background-color: #ffffff;
+                /*filter:alpha(opacity=90);*/
+                /*-moz-opacity:0.9;*/
+                /*opacity:0.9;*/
+                margin-top: 38px;
+                width: 500px;
+            }
+            .wos-pre-search-title{
+                font-size: 75%;
+                width: 100%;
+                color: #c1c1c1;
+                padding:5px 10px;
+            }
+            .wos-pre-search ul{
+                clear: both;
+            }
+            .wos-pre-search li{
+                list-style-type: none;
+                padding:5px 10px;
+                cursor: pointer;
+                font-size: 75%;
+            }
+            .wos-pre-search li:hover{
+                background-color: #e4e4e4;
+            }
+            .wos-pre-search ul hr{
+                margin: 0;
+            }
+            .wos-ol span{font-weight: bold}
+            .wos-ol-1 span{color: #ff6600}
+            .wos-ol-2 span{color: #fd7317}
+            .wos-ol-3 span{color: #fd8433}
+            .wos-search-more{
+                color: #ff6600;
+                margin-top: -22px;
+                padding-bottom: 10px;
+            }
+
+            .wos-pre-search a{color: #000;}
+            .wos-search-more a{
+                color: #ff6600;
+                font-size: 75%;
+            }
+        </style>
+        <h3>源码</h3>
+        <pre><code class="xml">&lt;template id="pre-search"&gt;
+    &lt;div class="wos-search-basic"&gt;
+        &lt;i class="am-icon-search"&gt;&lt;/i&gt;
+        &lt;input type="text" placeholder="大鱼海棠" v-model="keywords"  v-on:click="searchShow(1)" v-on:blur="searchShow(0)"&gt;
+        &lt;button type="button" class="am-btn am-btn-primary am-fr"&gt;搜索&lt;/button&gt;
+        &lt;a href="#" class="am-fr chart"&gt;&lt;i class="am-icon-bar-chart"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="wos-pre-search"  v-show="preShow"&gt;
+        &lt;div v-if="keywords.length"&gt;
+            &lt;div class="wos-pre-search-title" v-show="sb"&gt;
+                &lt;div class="am-fl"&gt;搜索关键词：{{keywords}}&lt;/div&gt;
+                &lt;div class="am-fr"&gt;&lt;a href="#"&gt;&lt;i class="am-icon-trash"&gt;&lt;/i&gt; 清空&lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li v-show="sb" v-on:click="searchUrl(item.url)" v-for="item of cacheKeywords | filterBy keywords in 'words' " @click="search()"&gt;
+                    {{ item.words }}
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div v-else v-show="preShow"&gt;
+            &lt;div class="wos-pre-search-title" v-show="sb"&gt;
+                &lt;div class="am-fl"&gt;历史搜索: &lt;/div&gt;
+                &lt;div class="am-fr"&gt;&lt;a href="#"&gt;&lt;i class="am-icon-trash"&gt;&lt;/i&gt; 清空&lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li v-show="sb" v-on:click="searchLocal(item)" v-for="item of historyData | limitBy historyDataNum" &gt;
+                    {{ item }}
+                &lt;/li&gt;
+                &lt;hr&gt;
+                &lt;li v-show="sb" v-on:click="searchUrl(item.url)" v-for="item of recommend | limitBy recommendNum" @click="search()" class="wos-ol wos-ol-{{ $index+1 }}"&gt;
+                    &lt;span&gt;{{ $index+1 }}. &lt;/span&gt;{{ item.words }}
+                &lt;/li&gt;
+                &lt;div v-show="sb" class="am-fr wos-search-more"&gt;
+                    &lt;a href="#" class="am-fr chart"&gt;
+                        &lt;i class="am-icon-bar-chart"&gt;&lt;/i&gt; 今日热搜
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;template&gt;
+
+
+&lt;script&gt;
+historyData=['榴莲','百香果','泰国芒果','山东大苹果','广德鸭梨','新疆葡萄干','海南椰子'];
+recommend=[
+    { words:'阿根廷红虾2kg/包 ￥158',url:'search.html?k=关键词或产品链接'},
+    { words:'加拿大AAA级西冷牛排250g ￥75',url:'search.html?k=关键词或产品链接'},
+    { words:'越南草虾(16-20只）400g ￥35',url:'search.html?k=关键词或产品链接'},
+    { words:'澳洲草饲西冷牛排500g*2 牛扒 ￥138',url:'search.html?k=关键词或产品链接'},
+    { words:'乌拉圭牛尾切片500g*2 牛肉 ￥92',url:'search.html?k=关键词或产品链接'},
+    { words:'厄瓜多尔白虾2kg(50-60只/kg) 白虾 ￥149',url:'search.html?k=关键词或产品链接'}
+];
+cacheKeywords = [
+    { words:'虾米',url:'search.html?k=关键词或产品链接'},
+    { words:'金锣优养冰鲜带筋猪蹄',url:'search.html?k=关键词或产品链接'},
+    { words:'金锣优养冰鲜汤排',url:'search.html?k=关键词或产品链接'},
+    { words:'易家菜园苍山山药',url:'search.html?k=关键词或产品链接'},
+    { words:'潮香村黑椒牛排',url:'search.html?k=关键词或产品链接'},
+    { words:'蔬氏意式沙拉',url:'search.html?k=关键词或产品链接'},
+    { words:'美威欧式三文鱼排',url:'search.html?k=关键词或产品链接'},
+    { words:'澳洲草饲西冷牛排',url:'search.html?k=关键词或产品链接'},
+    { words:'阿根廷红虾',url:'search.html?k=关键词或产品链接'},
+    { words:'西冷牛排',url:'search.html?k=关键词或产品链接'},
+    { words:'越南草虾',url:'search.html?k=关键词或产品链接'},
+    { words:'澳洲草饲西冷牛排',url:'search.html?k=关键词或产品链接'},
+    { words:'乌拉圭牛尾切片',url:'search.html?k=关键词或产品链接'},
+    { words:'厄瓜多尔白虾',url:'search.html?k=关键词或产品链接'},
+    { words:'山东甜玉米',url:'search.html?k=关键词或产品链接'},
+    { words:'昆明黄秋葵 ',url:'search.html?k=关键词或产品链接'},
+    { words:'精选胡萝卜',url:'search.html?k=关键词或产品链接'},
+    { words:'大蛤蜊肉',url:'search.html?k=关键词或产品链接'},
+    { words:'优质香菇',url:'search.html?k=关键词或产品链接'},
+    { words:'厄瓜多尔白虾',url:'search.html?k=关键词或产品链接'},
+    { words:'金锣优养冰鲜汤排',url:'search.html?k=关键词或产品链接'},
+    { words:'精选甜玉米',url:'search.html?k=关键词或产品链接'},
+    { words:'新鲜本地甘蓝',url:'search.html?k=关键词或产品链接'},
+    { words:'易家菜园西湖莼菜',url:'search.html?k=关键词或产品链接'},
+    { words:'黄瓜',url:'search.html?k=关键词或产品链接'},
+    { words:'越南草虾仁',url:'search.html?k=关键词或产品链接'}
+];
+var vm = new Vue({
+    el: '#search',
+    data: {
+        message: 'Hello Vue.js!',
+        mainWidth:"500px",
+        sb:true,
+        historyData:historyData,
+        historyDataNum:5,//历史数据读取数量
+        recommend:recommend,
+        recommendNum:5,//推荐数据读取数量
+        keywords:'',
+        cacheKeywords:cacheKeywords,
+        preShow:false
+    },
+    template:"#pre-search",
+    methods:{
+        searchShow:function(n){
+            if (n==1){
+                this.preShow = true
+            }else{
+                setTimeout(function(){
+                    vm.preShow = false
+                },100)
+
+            }
+        },
+        searchLocal:function(keywords){
+            window.open("search.html?k=" + keywords);
+        },
+        searchUrl:function(url){
+            window.open(url);
+        }
+    }
+})
+&lt;/script&gt;
+
+&lt;style&gt;
+    .wos-search-basic{
+        padding: 5px 0px  0px 10px;
+        border: 1px solid #0e90d2;
+        height: 39px;
+        color: #0e90d2;
+        overflow: hidden;
+        background-color: #fff;
+        position: absolute;
+        z-index: 9;
+        width: 500px;
+    }
+    .wos-search-basic input{
+        border: 0px;
+        margin-top: -5px;
+        outline:none;
+        width: 70%;
+    }
+    .wos-search-basic button{
+        margin:-5px -2px 0 0;
+    }
+    .chart{
+        padding-right: 10px;
+    }
+    .wos-pre-search{
+        border: 1px solid #0e90d2;
+        border-top: 0px;
+        position: absolute;
+        background-color: #ffffff;
+        /*filter:alpha(opacity=90);*/
+        /*-moz-opacity:0.9;*/
+        /*opacity:0.9;*/
+        margin-top: 38px;
+        width: 500px;
+    }
+    .wos-pre-search-title{
+        font-size: 75%;
+        width: 100%;
+        color: #c1c1c1;
+        padding:5px 10px;
+    }
+    .wos-pre-search ul{
+        clear: both;
+    }
+    .wos-pre-search li{
+        list-style-type: none;
+        padding:5px 10px;
+        cursor: pointer;
+        font-size: 75%;
+    }
+    .wos-pre-search li:hover{
+        background-color: #e4e4e4;
+    }
+    .wos-pre-search ul hr{
+        margin: 0;
+    }
+    .wos-ol span{font-weight: bold}
+    .wos-ol-1 span{color: #ff6600}
+    .wos-ol-2 span{color: #fd7317}
+    .wos-ol-3 span{color: #fd8433}
+    .wos-search-more{
+        color: #ff6600;
+        margin-top: -22px;
+        padding-bottom: 10px;
+    }
+    .wos-pre-search a{color: #000;}
+    .wos-search-more a{
+        color: #ff6600;
+        font-size: 75%;
+    }
+&lt;/style&gt;</code></pre>
+    </div>
+</div>
+
+<footer>
+    <div id="ussay" class="am-g  pagewidth">
+        <div class="am-u-sm-4">
+            <h3>Help ECUI </h3>
+            <p>我们希望你能享受这种更实用的UI设计！如果你觉得现实中已经得到了我们的帮助，希望支持我们的团队，送我们超过一个捐赠！任何金额将有助于支持和继续在这个项目上的发展，并不胜感激。 </p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>MIT License</h3>
+            <p>ECUI采用了Amaze UI框架，并使用 MIT 许可证发布，用户可以自由使用、复制、修改、合并、出版发行、散布、再授权及贩售 ECUI及其副本。</p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>Heroes</h3>
+            <p>参考、使用的项目：AmazeUI，jQuery, Vue.js, Seajs, Less, normalize.css, FontAwesome, Bootstrap, Foundation, UIKit, Pure, Framework7, etc.</p>
+        </div>
+    </div>
+    <div id="copyright">吉ICP备12003179号-4</div>
+</footer>
+
+</body>
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/amazeui/amazeui.min.js"></script>
+
+</html>

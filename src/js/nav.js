@@ -1,19 +1,19 @@
 var nav = [
     {
         "name":"开始使用",
-        "url":"/getting-started/"
+        "url":"../getting-started/"
     },
     {
         "name":"CSS 扩展",
-        "url":"/css/"
+        "url":"../css/"
     },
     {
         "name":"展示扩展",
-        "url":"/shows/"
+        "url":"../shows/"
     },
     {
         "name":"功能扩展",
-        "url":"/fun/"
+        "url":"../fun/"
     }
 ];
 new Vue({
@@ -81,3 +81,16 @@ new Vue({
         nav:cssNav
     }
 });
+var menuShows = [
+    {
+        "name":"未知",
+        "url":"#"
+    }
+];
+new Vue({
+    el: '#menuShows',
+    data:{
+        nav:menuShows
+    }
+});
+
