@@ -2,66 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9a7149-241a-4f05-bab9-884fe36bf590" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cdn/ico/ico127.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cdn/ico/ico200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cdn/ico/ico32.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cdn/ico/ico64.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/zan.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/OrderedList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/buycar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/images/goods-001.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/pre-search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fun/selectNum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/getting-started/goods.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/getting-started/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/mascots.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000001.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000001_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000002.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000002_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000003.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000003_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000004.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000004_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000005.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000005_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000006.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000006_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000007.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000007_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000008.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000008_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000009.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000009_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000010.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000010_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000011.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000011_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000012.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000012_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000013.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000013_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000014.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000014_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000015.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000015_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000016.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000016_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000017.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000017_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000018.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000018_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000019.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/json/images/90000019_s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/shows/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/shows/images/tempBigImg.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/shows/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/nav.js" afterPath="$PROJECT_DIR$/src/js/nav.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/index.html" afterPath="$PROJECT_DIR$/e/css/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/search.html" afterPath="$PROJECT_DIR$/e/css/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/zan.html" afterPath="$PROJECT_DIR$/e/css/zan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/OrderedList.html" afterPath="$PROJECT_DIR$/e/fun/OrderedList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/buycar.html" afterPath="$PROJECT_DIR$/e/fun/buycar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/index.html" afterPath="$PROJECT_DIR$/e/fun/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/pre-search.html" afterPath="$PROJECT_DIR$/e/fun/pre-search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/selectNum.html" afterPath="$PROJECT_DIR$/e/fun/selectNum.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/getting-started/index.html" afterPath="$PROJECT_DIR$/e/getting-started/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/shows/index.html" afterPath="$PROJECT_DIR$/e/shows/index.html" />
     </list>
     <ignored path="amazeui-ec.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,18 +35,88 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e/css/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="7" />
+            <state relative-caret-position="-428">
+              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/css/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zan.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/e/css/zan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="178" column="7" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buycar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/fun/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderedList.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/fun/OrderedList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pre-search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/fun/pre-search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectNum.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e/fun/selectNum.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e/getting-started/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="513">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -105,18 +125,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e/shows/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="37" column="26" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/nav.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+            <state relative-caret-position="189">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -131,17 +141,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/e/css/index.html" />
-        <option value="$PROJECT_DIR$/e/css/search.html" />
-        <option value="$PROJECT_DIR$/e/css/zan.html" />
+        <option value="$PROJECT_DIR$/src/js/nav.js" />
+        <option value="$PROJECT_DIR$/e/shows/index.html" />
+        <option value="$PROJECT_DIR$/e/getting-started/index.html" />
         <option value="$PROJECT_DIR$/e/fun/selectNum.html" />
         <option value="$PROJECT_DIR$/e/fun/pre-search.html" />
         <option value="$PROJECT_DIR$/e/fun/OrderedList.html" />
-        <option value="$PROJECT_DIR$/e/fun/buycar.html" />
         <option value="$PROJECT_DIR$/e/fun/index.html" />
-        <option value="$PROJECT_DIR$/e/shows/index.html" />
-        <option value="$PROJECT_DIR$/src/js/nav.js" />
-        <option value="$PROJECT_DIR$/e/getting-started/index.html" />
+        <option value="$PROJECT_DIR$/e/fun/buycar.html" />
+        <option value="$PROJECT_DIR$/e/css/zan.html" />
+        <option value="$PROJECT_DIR$/e/css/search.html" />
+        <option value="$PROJECT_DIR$/e/css/index.html" />
       </list>
     </option>
   </component>
@@ -392,12 +402,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475473071189</updated>
-      <workItem from="1475473072402" duration="1894000" />
+      <workItem from="1475473072402" duration="2522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1894000" />
+    <option name="totallyTimeSpent" value="2522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -478,78 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/e/css/zan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="178" column="7" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/css/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="137" column="7" selection-start-line="137" selection-start-column="7" selection-end-line="137" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/selectNum.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="94" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/pre-search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="463" column="7" selection-start-line="463" selection-start-column="7" selection-end-line="463" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/OrderedList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="337" column="7" selection-start-line="337" selection-start-column="7" selection-end-line="337" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="687" column="7" selection-start-line="687" selection-start-column="7" selection-end-line="687" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/css/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e/shows/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/nav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -558,10 +496,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/e/shows/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/e/getting-started/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="513">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/selectNum.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/pre-search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/OrderedList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/css/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/css/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/css/zan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="178" column="7" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
           <folding />
         </state>
       </provider>
