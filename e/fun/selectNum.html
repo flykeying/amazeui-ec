@@ -50,21 +50,183 @@
     </div>
     <div class="am-u-sm-9 info am-padding-lg showMi">
         <h3>数量选择控件</h3>
-        <div id="selectNum">
-            <button type="button" class="am-btn am-btn-default am-fl wos-selectNum-btn" disabled>-</button><input type="text" class="am-form-field am-fl wos-selectNum-text" /><button type="button" class="am-btn am-fl am-btn-default wos-selectNum-btn" >+</button>
-        </div>
-        <style>
-            .wos-selectNum-btn{
-                margin: 0;
+        <div id="selectNum"></div>
+
+<template id="selectNumTemplate">
+    <div class="selectNum">
+        <button type="button" class="am-btn am-btn-default am-fl wos-selectNum-btn"  @click="reduce" id="reduce">-</button>
+        <input v-model="goodsNum" maxlength="4" type="text" class="am-fl wos-selectNum-text" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"/>
+        <button type="button" class="am-btn am-fl am-btn-default wos-selectNum-btn" @click="plus" id="plus">+</button>
+        <span>件（库存2299件）</span>
+    </div>
+</template>
+<script>
+    //组件更改goods数据，如有联动直接替换json数据
+    var goods={
+      name:'产品名称',
+      goodsNum:1,//最少订单
+      moq:1,//起订量
+      Stock:10,//库存
+      up:'25'//单价
+
+    };
+    var vm = new Vue({
+        el:'#selectNum',
+        data:goods,
+        template:'#selectNumTemplate',
+        methods:{
+            reduce:function(){
+                if (this.goodsNum > this.moq){
+                    this.goodsNum--
+                }
+            },
+            plus:function(){
+                if (this.goodsNum < this.Stock){
+                    this.goodsNum++
+                }
             }
-            .wos-selectNum-text{
-                width: 35px;
-                border-left: 0px;
-                border-right: 0px;
+        },
+        ready:function(){
+            if (this.goodsNum == this.moq){
+                document.getElementById('reduce').setAttribute('disabled','');
+            }else{
+                document.getElementById('reduce').removeAttribute('disabled','');
             }
-        </style>
-        <h3>源码</h3>
-        <pre><code class="xml"></code></pre>
+            if (this.goodsNum == this.Stock){
+                document.getElementById('plus').setAttribute('disabled','');
+            }else{
+                document.getElementById('plus').removeAttribute('disabled','');
+            }
+        },
+        watch:{
+            "goodsNum":function(newval,oldval){
+                console.log(newval)
+                if (newval == this.moq){
+                    document.getElementById('reduce').setAttribute('disabled','');
+                }else{
+                    document.getElementById('reduce').removeAttribute('disabled','');
+                }
+                if (newval == this.Stock){
+                    document.getElementById('plus').setAttribute('disabled','');
+                }else{
+                    document.getElementById('plus').removeAttribute('disabled','');
+                }
+            }
+        }
+    })
+</script>
+<style>
+    .selectNum{
+        height: 35px;
+        line-height: 35px;
+    }
+    .selectNum span{
+        margin-left: 10px;
+    }
+    .wos-selectNum-btn{
+        margin: 0;
+    }
+    .wos-selectNum-text{
+        width: 45px;
+        height: 37px;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+
+        outline: none;
+        text-align: center;
+        font-size: 75%;
+    }
+</style>
+        <h3 style="clear: both;">源码</h3>
+        <pre><code class="xml">&lt;template id="selectNumTemplate"&gt;
+    &lt;div class="selectNum"&gt;
+        &lt;button type="button" class="am-btn am-btn-default am-fl wos-selectNum-btn"  @click="reduce" id="reduce"&gt;-&lt;/button&gt;
+        &lt;input v-model="goodsNum" maxlength="4" type="text" class="am-fl wos-selectNum-text" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"/&gt;
+        &lt;button type="button" class="am-btn am-fl am-btn-default wos-selectNum-btn" @click="plus" id="plus"&gt;+&lt;/button&gt;
+        &lt;span&gt;件（库存2299件）&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    //组件更改goods数据，如有联动直接替换json数据
+    var goods={
+      name:'产品名称',
+      goodsNum:1,//最少订单
+      moq:1,//起订量
+      Stock:10,//库存
+      up:'25'//单价
+
+    };
+    var vm = new Vue({
+        el:'#selectNum',
+        data:goods,
+        template:'#selectNumTemplate',
+        methods:{
+            reduce:function(){
+                if (this.goodsNum &gt; this.moq){
+                    this.goodsNum--
+                }
+            },
+            plus:function(){
+                if (this.goodsNum &lt; this.Stock){
+                    this.goodsNum++
+                }
+            }
+        },
+        ready:function(){
+            if (this.goodsNum == this.moq){
+                document.getElementById('reduce').setAttribute('disabled','');
+            }else{
+                document.getElementById('reduce').removeAttribute('disabled','');
+            }
+            if (this.goodsNum == this.Stock){
+                document.getElementById('plus').setAttribute('disabled','');
+            }else{
+                document.getElementById('plus').removeAttribute('disabled','');
+            }
+        },
+        watch:{
+            "goodsNum":function(newval,oldval){
+                console.log(newval)
+                if (newval == this.moq){
+                    document.getElementById('reduce').setAttribute('disabled','');
+                }else{
+                    document.getElementById('reduce').removeAttribute('disabled','');
+                }
+                if (newval == this.Stock){
+                    document.getElementById('plus').setAttribute('disabled','');
+                }else{
+                    document.getElementById('plus').removeAttribute('disabled','');
+                }
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;style&gt;
+    .selectNum{
+        height: 35px;
+        line-height: 35px;
+    }
+    .selectNum span{
+        margin-left: 10px;
+    }
+    .wos-selectNum-btn{
+        margin: 0;
+    }
+    .wos-selectNum-text{
+        width: 45px;
+        height: 37px;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+
+        outline: none;
+        text-align: center;
+        font-size: 75%;
+    }
+&lt;/style&gt;</code></pre>
 
     </div>
 </div>
