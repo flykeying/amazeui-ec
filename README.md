@@ -1,4 +1,4 @@
-# amazeui-ecui
+<h1><a href="http://amazeui.org/" title="Amaze UI 官网"><img style="float: left" src="https://flykeying.github.io/amazeui-ec/src/images/xt.jpg" alt="Amazeui-ec"/></a></h1>
 
 Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](https://github.com/vuejs/vue)
 
