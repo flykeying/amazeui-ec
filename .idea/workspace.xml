@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9a7149-241a-4f05-bab9-884fe36bf590" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/index.html" afterPath="$PROJECT_DIR$/e/css/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/search.html" afterPath="$PROJECT_DIR$/e/css/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/css/zan.html" afterPath="$PROJECT_DIR$/e/css/zan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/OrderedList.html" afterPath="$PROJECT_DIR$/e/fun/OrderedList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/buycar.html" afterPath="$PROJECT_DIR$/e/fun/buycar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/index.html" afterPath="$PROJECT_DIR$/e/fun/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/pre-search.html" afterPath="$PROJECT_DIR$/e/fun/pre-search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/fun/selectNum.html" afterPath="$PROJECT_DIR$/e/fun/selectNum.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/getting-started/index.html" afterPath="$PROJECT_DIR$/e/getting-started/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e/shows/index.html" afterPath="$PROJECT_DIR$/e/shows/index.html" />
     </list>
     <ignored path="amazeui-ec.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zan.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zan.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e/css/zan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="178" column="7" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
+            <state relative-caret-position="3">
+              <caret line="152" column="14" selection-start-line="152" selection-start-column="14" selection-end-line="152" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -65,8 +57,38 @@
       <file leaf-file-name="buycar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+            <state relative-caret-position="216">
+              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -102,36 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectNum.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e/fun/selectNum.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e/getting-started/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e/shows/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -148,10 +140,11 @@
         <option value="$PROJECT_DIR$/e/fun/pre-search.html" />
         <option value="$PROJECT_DIR$/e/fun/OrderedList.html" />
         <option value="$PROJECT_DIR$/e/fun/index.html" />
-        <option value="$PROJECT_DIR$/e/fun/buycar.html" />
         <option value="$PROJECT_DIR$/e/css/zan.html" />
         <option value="$PROJECT_DIR$/e/css/search.html" />
         <option value="$PROJECT_DIR$/e/css/index.html" />
+        <option value="$PROJECT_DIR$/e/fun/buycar.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -402,12 +395,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475473071189</updated>
-      <workItem from="1475473072402" duration="2522000" />
+      <workItem from="1475473072402" duration="3277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2522000" />
+    <option name="totallyTimeSpent" value="3277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -544,14 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/e/css/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -570,8 +555,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/e/css/zan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="178" column="7" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
+        <state relative-caret-position="3">
+          <caret line="152" column="14" selection-start-line="152" selection-start-column="14" selection-end-line="152" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e/fun/buycar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
           <folding />
         </state>
       </provider>

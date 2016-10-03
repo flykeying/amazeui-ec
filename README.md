@@ -2,6 +2,8 @@
 
 Free themes for [AmazeUI](https://github.com/amazeui/amazeui)。with [vue.js](https://github.com/vuejs/vue)
 
+### [查看演示版](https://flykeying.github.io/amazeui-ec/)
+
 ## 介绍
 
 专注于电商平台的交互UI框架，框架采用AmazeUI框架为蓝本， 以插件库的形式部署ECUI组件。请使用者优先熟悉AmazeUI框架。 ECUI继承采用了Vuejs进行构建，每个组件面向的都是数据模型。尽量兼容AmazeUI jQuery组件和写法。
