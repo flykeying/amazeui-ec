@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECUI-电商平台的交互UI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/cdn/ico/ico32.ico">
+    <link rel="stylesheet" href="/node_modules/amazeui/dist/css/amazeui.min.css">
+    <link rel="stylesheet" href="/src/css/layout-page.css">
+    <link rel="stylesheet" href="/lib/github-gist.min.css">
+    <script src="/lib/highlight.min.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+    <div class="wos">
+        <h1 class="am-fl"><a href="/">AmazeUI-ec</a></h1>
+        <nav class="am-fr">
+            <a v-for="item of nav" href="{{item.url}}">{{item.name}}</a>
+        </nav>
+    </div>
+</header>
+
+<div class="am-g main pagewidth">
+
+    <div class="am-u-sm-3 menu am-padding-lg">
+        <h1>功能扩展</h1>
+        <hr>
+        <div id="funNav">
+            <ul>
+                <li v-for="item of nav">
+                    <div v-if="item.url == 'buycar.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="/src/js/nav.js"></script>
+    </div>
+    <div class="am-u-sm-9 info am-padding-lg showMi">
+        <h3>购物车展示</h3>
+        <p class="remarks">实际环境中，请自行修改css样式</p>
+<div id="buycar">
+    <h3><span>购物车</span></h3>
+    <template id="my-buygoods" v-if="goods.length">
+        <div id="buycarTitle">
+            <ul class="buyCarList">
+                <li class="li-checkbox"></li>
+                <li class="li-info">商品信息</li>
+                <li class="li-price">单价</li>
+                <li class="li-num">数量</li>
+                <li class="li-money">金额</li>
+                <li class="li-oper">操作</li>
+            </ul>
+        </div>
+
+        <div class="buyGoods" v-for="item in goods">
+            <ul class="buyCarList">
+                <li class="li-checkbox"><input type="checkbox" id="{{$index}}" value="{{$index}}" v-model="checkname"></li>
+                <li class="li-info">
+                    <div class="goods-img"><img v-bind:src="item.goodsImg"></div>
+                    <div class="goods-title">{{item.goodsTitle}}</div>
+                    <div class="goods-specifications">{{item.goodsSpecifications}}</div>
+                </li>
+                <li class="li-price">
+                    <div class="goods-original">{{item.goodsOriginal | currency '￥'}}</div>
+                    <div class="goods-price">{{item.goodsPrice | currency '￥'}}</div>
+                </li>
+                <li class="li-num">
+                    <span class="goods-num-btn goods-num-minus" @click="minus($index)">-</span>
+                    <input type="text" :value="item.goodsNum" class="goods-num">
+                    <span class="goods-num-btn goods-num-add" @click="add($index)">+</span>
+                </li>
+                <li class="li-money">
+                    <div class="goods-allPrice">{{item.goodsPrice*item.goodsNum | currency '￥'}}</div>
+                </li>
+                <li class="li-oper">
+                    <div class="goods-oper" @click="del($index)">删除</div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="clearing">
+            <ul class="buyCarList">
+                <li class="li-info">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" value="" id="allselect" @click="selectAll"> 全选&nbsp;&nbsp;
+                    <span class="hand" @click="delall">删除</span>&nbsp;&nbsp;
+                    <span class="hand" @click="cleanAll">清空</span>
+                </li>
+                <li class="li-price">&nbsp;</li>
+                <li class="li-num">已选商品共{{allcount}}件</li>
+                <li class="li-bottom">合计：{{total  | currency '￥'}} </li>
+            </ul>
+            <div class="buycar-btn">结算</div>
+        </div>
+    </template>
+    <template v-else>
+        <p>（空）</p>
+    </template>
+</div>
+<script>
+    var goods = [
+        {
+            'id':'A101',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'陈年原浆窖藏老酒秒杀茅台镇酱香型白酒53度纯粮坤沙白酒特价包邮',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'35',
+            'goodsNum':'2'
+        },
+        {
+            'id':'A102',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'中秋祝福的月饼很好吃，快来买呀。快来买呀',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'70',
+            'goodsNum':'1'
+        },
+        {
+            'id':'A103',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'红酒配红肉，这是一块很好吃的肉肉。快来买呀',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'100',
+            'goodsNum':'1'
+        }
+    ];
+    var vm = new Vue({
+        el:'#buycar',
+        data:{
+            goods:goods,
+            checkname:[],
+            total :0,
+            allcount:0
+        },
+        computed:{
+            total:function(){
+                var temptotal = 0;
+                for (var i=0 ; i<goods.length; i++){
+                    temptotal = temptotal + parseInt(goods[i].goodsPrice * goods[i].goodsNum)
+                }
+                return temptotal;
+            },
+            allcount:function(){
+                var tempallcount = 0;
+                for (var i=0 ; i<goods.length; i++){
+                    tempallcount = tempallcount + parseInt(goods[i].goodsNum)
+                }
+                return tempallcount;
+            }
+        },
+        methods:{
+            add:function($index){
+                goods[$index].goodsNum ++
+            },
+            minus:function($index){
+                if (goods[$index].goodsNum > 0){
+                    goods[$index].goodsNum --
+                }
+            },
+            del:function($index){
+                this.$emit('del',$index)
+            },
+            cleanAll:function(){
+                goods.splice(0,goods.length);
+            },
+            selectAll:function(){
+                this.checkname = [];
+                if (document.getElementById('allselect').checked){
+                    for (var i=0; i<goods.length ; i++){
+                        this.checkname.push(String(i))
+                    }
+                }else{
+                    this.checkname = []
+                }
+            },
+            delall:function(){
+                for (var i=0; i <this.checkname.length; i++){
+                    this.$emit('del',this.checkname[i])
+                }
+                this.$emit('cleanCheckname')
+            }
+        },
+        events:{
+            del:function($index){
+                goods.splice($index,1)
+            },
+            cleanCheckname:function(){
+                this.checkname = []
+            }
+        }
+    });
+</script>
+<style>
+    .hand {
+        cursor: pointer;
+    }
+    #buycar {
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+    }
+    #buycar h3 {
+        color: #f08719;
+        font-size: 300%;
+        font-weight: bold;
+        width: 100%;
+        border-bottom: 5px solid #edecec;
+        height: 81px  !important;
+        height: 82px;
+    }
+    #buycar h3 span {
+        border-bottom: 5px solid #f08719;
+        position: absolute;
+        text-indent: 10px;
+    }
+    #buycar #buycarTitle {
+        height: 35px;
+        line-height: 35px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+    #buycar #buycarTitle ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 30px;
+    }
+    #buycar .buyCarList li {
+        list-style-type: none;
+        float: left;
+        text-align: center;
+        overflow: hidden;
+    }
+    #buycar .buyCarList .li-checkbox {
+        width: 50px;
+        text-align: center;
+    }
+    #buycar .buyCarList .li-info {
+        width: 320px;
+        text-align: left;
+        padding: 0 10px 0 0;
+    }
+    #buycar .buyCarList .li-price {
+        width: 100px;
+        text-align: center;
+    }
+    #buycar .buyCarList .li-num {
+        width: 170px;
+    }
+    #buycar .buyCarList .li-money {
+        width: 50px;
+    }
+    #buycar .buyCarList .li-oper {
+        width: 100px;
+        text-align: right;
+    }
+    #buycar .buyCarList .li-bottom {
+        width: 180px;
+    }
+    #buycar .buyGoods {
+        background-color: #edecec;
+        border: 1px solid #bfbebe;
+        height: 100px;
+        overflow: hidden;
+        padding: 10px 0;
+        font-size: 75%;
+        margin-bottom: 20px;
+        clear: both;
+    }
+    #buycar .buyGoods .goods-img {
+        width: 90px;
+        height: 80px;
+        overflow: hidden;
+        float: left;
+    }
+    #buycar .buyGoods .goods-original {
+        color: #bfbebe;
+        text-decoration: line-through;
+        font-size: 60%;
+    }
+    #buycar .buyGoods .goods-specifications {
+        color: #bfbebe;
+    }
+    #buycar .buyGoods .goods-price {
+        font-weight: bold;
+        font-size: 85%;
+    }
+    #buycar .buyGoods .goods-allPrice {
+        font-weight: bold;
+        font-size: 100%;
+    }
+    #buycar .buyGoods .goods-oper {
+        cursor: pointer;
+    }
+    #buycar .buyGoods .goods-oper:hover {
+        color: #ee0013;
+    }
+    #buycar .buyGoods .goods-num {
+        width: 25px;
+        height: 20px;
+        text-align: center;
+        border: solid 1px #bfbebe;
+        margin-bottom: 5px;
+    }
+    #buycar .buyGoods .goods-num-btn {
+        padding: 2px 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    #buycar .buyGoods .goods-num-btn:hover {
+        color: #fff;
+        background-color: #ee0013;
+    }
+    #buycar .buyGoods:hover {
+        background-color: #f9f9f9;
+        border: 1px solid #edecec;
+    }
+    #buycar #clearing {
+        height: 55px;
+        line-height: 55px;
+        background-color: #edecec;
+        border: 1px solid #bfbebe;
+        font-size: 75%;
+    }
+    #buycar #clearing .buycar-btn {
+        background-color: #f08719;
+        float: right;
+        color: #fff;
+        width: 80px;
+        text-align: center;
+        margin-top: -56px;
+        height: 55px;
+        font-size: 150%;
+        cursor: pointer;
+        letter-spacing: 5px;
+    }
+    #buycar #clearing .buycar-btn:hover {
+        background-color: #fc983d;
+    }
+</style>
+        <h3 style="clear: both">源码</h3>
+        <pre><code class="xml">&lt;div id="buycar"&gt;
+    &lt;h3&gt;&lt;span&gt;购物车&lt;/span&gt;&lt;/h3&gt;
+    &lt;template id="my-buygoods" v-if="goods.length"&gt;
+        &lt;div id="buycarTitle"&gt;
+            &lt;ul class="buyCarList"&gt;
+                &lt;li class="li-checkbox"&gt;&lt;/li&gt;
+                &lt;li class="li-info"&gt;商品信息&lt;/li&gt;
+                &lt;li class="li-price"&gt;单价&lt;/li&gt;
+                &lt;li class="li-num"&gt;数量&lt;/li&gt;
+                &lt;li class="li-money"&gt;金额&lt;/li&gt;
+                &lt;li class="li-oper"&gt;操作&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="buyGoods" v-for="item in goods"&gt;
+            &lt;ul class="buyCarList"&gt;
+                &lt;li class="li-checkbox"&gt;&lt;input type="checkbox" id="{{$index}}" value="{{$index}}" v-model="checkname"&gt;&lt;/li&gt;
+                &lt;li class="li-info"&gt;
+                    &lt;div class="goods-img"&gt;&lt;img v-bind:src="item.goodsImg"&gt;&lt;/div&gt;
+                    &lt;div class="goods-title"&gt;{{item.goodsTitle}}&lt;/div&gt;
+                    &lt;div class="goods-specifications"&gt;{{item.goodsSpecifications}}&lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="li-price"&gt;
+                    &lt;div class="goods-original"&gt;{{item.goodsOriginal | currency '￥'}}&lt;/div&gt;
+                    &lt;div class="goods-price"&gt;{{item.goodsPrice | currency '￥'}}&lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="li-num"&gt;
+                    &lt;span class="goods-num-btn goods-num-minus" @click="minus($index)"&gt;-&lt;/span&gt;
+                    &lt;input type="text" :value="item.goodsNum" class="goods-num"&gt;
+                    &lt;span class="goods-num-btn goods-num-add" @click="add($index)"&gt;+&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class="li-money"&gt;
+                    &lt;div class="goods-allPrice"&gt;{{item.goodsPrice*item.goodsNum | currency '￥'}}&lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="li-oper"&gt;
+                    &lt;div class="goods-oper" @click="del($index)"&gt;删除&lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+
+        &lt;div id="clearing"&gt;
+            &lt;ul class="buyCarList"&gt;
+                &lt;li class="li-info"&gt;
+                    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                    &lt;input type="checkbox" value="" id="allselect" @click="selectAll"&gt; 全选 &nbsp;&nbsp;
+                    &lt;span class="hand" @click="delall"&gt;删除&lt;/span&gt;&nbsp;&nbsp;
+                    &lt;span class="hand" @click="cleanAll"&gt;清空&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class="li-price"&gt;&nbsp;&lt;/li&gt;
+                &lt;li class="li-num"&gt;已选商品共{{allcount}}件&lt;/li&gt;
+                &lt;li class="li-bottom"&gt;合计：{{total  | currency '￥'}} &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="buycar-btn"&gt;结算&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;template v-else&gt;
+        &lt;p&gt;（空）&lt;/p&gt;
+    &lt;/template&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var goods = [
+        {
+            'id':'A101',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'陈年原浆窖藏老酒秒杀茅台镇酱香型白酒53度纯粮坤沙白酒特价包邮',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'35',
+            'goodsNum':'2'
+        },
+        {
+            'id':'A102',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'中秋祝福的月饼很好吃，快来买呀。快来买呀',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'70',
+            'goodsNum':'1'
+        },
+        {
+            'id':'A103',
+            'goodsImg':'images/goods-001.jpg',
+            'goodsTitle':'红酒配红肉，这是一块很好吃的肉肉。快来买呀',
+            'goodsSpecifications':'规格：500g',
+            'goodsOriginal':'122',
+            'goodsPrice':'100',
+            'goodsNum':'1'
+        }
+    ];
+    var vm = new Vue({
+        el:'#buycar',
+        data:{
+            goods:goods,
+            checkname:[],
+            total :0,
+            allcount:0
+        },
+        computed:{
+            total:function(){
+                var temptotal = 0;
+                for (var i=0 ; i&lt;goods.length; i++){
+                    temptotal = temptotal + parseInt(goods[i].goodsPrice * goods[i].goodsNum)
+                }
+                return temptotal;
+            },
+            allcount:function(){
+                var tempallcount = 0;
+                for (var i=0 ; i&lt;goods.length; i++){
+                    tempallcount = tempallcount + parseInt(goods[i].goodsNum)
+                }
+                return tempallcount;
+            }
+        },
+        methods:{
+            add:function($index){
+                goods[$index].goodsNum ++
+            },
+            minus:function($index){
+                if (goods[$index].goodsNum &gt; 0){
+                    goods[$index].goodsNum --
+                }
+            },
+            del:function($index){
+                this.$emit('del',$index)
+            },
+            cleanAll:function(){
+                goods.splice(0,goods.length);
+            },
+            selectAll:function(){
+                this.checkname = [];
+                if (document.getElementById('allselect').checked){
+                    for (var i=0; i&lt;goods.length ; i++){
+                        this.checkname.push(String(i))
+                    }
+                }else{
+                    this.checkname = []
+                }
+            },
+            delall:function(){
+                for (var i=0; i &lt;this.checkname.length; i++){
+                    this.$emit('del',this.checkname[i])
+                }
+                this.$emit('cleanCheckname')
+            }
+        },
+        events:{
+            del:function($index){
+                goods.splice($index,1)
+            },
+            cleanCheckname:function(){
+                this.checkname = []
+            }
+        }
+    });
+&lt;/script&gt;
+&lt;style&gt;
+    .hand {
+        cursor: pointer;
+    }
+    #buycar {
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+    }
+    #buycar h3 {
+        color: #f08719;
+        font-size: 300%;
+        font-weight: bold;
+        width: 100%;
+        border-bottom: 5px solid #edecec;
+        height: 81px  !important;
+        height: 82px;
+    }
+    #buycar h3 span {
+        border-bottom: 5px solid #f08719;
+        position: absolute;
+        text-indent: 10px;
+    }
+    #buycar #buycarTitle {
+        height: 35px;
+        line-height: 35px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+    #buycar #buycarTitle ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 30px;
+    }
+    #buycar .buyCarList li {
+        list-style-type: none;
+        float: left;
+        text-align: center;
+        overflow: hidden;
+    }
+    #buycar .buyCarList .li-checkbox {
+        width: 50px;
+        text-align: center;
+    }
+    #buycar .buyCarList .li-info {
+        width: 320px;
+        text-align: left;
+        padding: 0 10px 0 0;
+    }
+    #buycar .buyCarList .li-price {
+        width: 100px;
+        text-align: center;
+    }
+    #buycar .buyCarList .li-num {
+        width: 170px;
+    }
+    #buycar .buyCarList .li-money {
+        width: 50px;
+    }
+    #buycar .buyCarList .li-oper {
+        width: 100px;
+        text-align: right;
+    }
+    #buycar .buyCarList .li-bottom {
+        width: 180px;
+    }
+    #buycar .buyGoods {
+        background-color: #edecec;
+        border: 1px solid #bfbebe;
+        height: 100px;
+        overflow: hidden;
+        padding: 10px 0;
+        font-size: 75%;
+        margin-bottom: 20px;
+        clear: both;
+    }
+    #buycar .buyGoods .goods-img {
+        width: 90px;
+        height: 80px;
+        overflow: hidden;
+        float: left;
+    }
+    #buycar .buyGoods .goods-original {
+        color: #bfbebe;
+        text-decoration: line-through;
+        font-size: 60%;
+    }
+    #buycar .buyGoods .goods-specifications {
+        color: #bfbebe;
+    }
+    #buycar .buyGoods .goods-price {
+        font-weight: bold;
+        font-size: 85%;
+    }
+    #buycar .buyGoods .goods-allPrice {
+        font-weight: bold;
+        font-size: 100%;
+    }
+    #buycar .buyGoods .goods-oper {
+        cursor: pointer;
+    }
+    #buycar .buyGoods .goods-oper:hover {
+        color: #ee0013;
+    }
+    #buycar .buyGoods .goods-num {
+        width: 25px;
+        height: 20px;
+        text-align: center;
+        border: solid 1px #bfbebe;
+        margin-bottom: 5px;
+    }
+    #buycar .buyGoods .goods-num-btn {
+        padding: 2px 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    #buycar .buyGoods .goods-num-btn:hover {
+        color: #fff;
+        background-color: #ee0013;
+    }
+    #buycar .buyGoods:hover {
+        background-color: #f9f9f9;
+        border: 1px solid #edecec;
+    }
+    #buycar #clearing {
+        height: 55px;
+        line-height: 55px;
+        background-color: #edecec;
+        border: 1px solid #bfbebe;
+        font-size: 75%;
+    }
+    #buycar #clearing .buycar-btn {
+        background-color: #f08719;
+        float: right;
+        color: #fff;
+        width: 80px;
+        text-align: center;
+        margin-top: -56px;
+        height: 55px;
+        font-size: 150%;
+        cursor: pointer;
+        letter-spacing: 5px;
+    }
+    #buycar #clearing .buycar-btn:hover {
+        background-color: #fc983d;
+    }
+&lt;/style&gt;</code></pre>
+    </div>
+</div>
+
+
+<footer>
+    <div id="ussay" class="am-g  pagewidth">
+        <div class="am-u-sm-4">
+            <h3>Help ECUI </h3>
+            <p>我们希望你能享受这种更实用的UI设计！如果你觉得现实中已经得到了我们的帮助，希望支持我们的团队，送我们超过一个捐赠！任何金额将有助于支持和继续在这个项目上的发展，并不胜感激。 </p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>MIT License</h3>
+            <p>ECUI采用了Amaze UI框架，并使用 MIT 许可证发布，用户可以自由使用、复制、修改、合并、出版发行、散布、再授权及贩售 ECUI及其副本。</p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>Heroes</h3>
+            <p>参考、使用的项目：AmazeUI，jQuery, Vue.js, Seajs, Less, normalize.css, FontAwesome, Bootstrap, Foundation, UIKit, Pure, Framework7, etc.</p>
+        </div>
+    </div>
+    <div id="copyright">吉ICP备12003179号-4</div>
+</footer>
+
+</body>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/amazeui/dist/js/amazeui.min.js"></script>
+
+</html>

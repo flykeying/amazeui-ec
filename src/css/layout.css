@@ -1,0 +1,174 @@
+.greenText {
+  color: #a4cd5e;
+}
+.shenhongText {
+  color: #dd5c3d;
+}
+.bgcolorHui {
+  background-color: #656666;
+}
+.bgcolorgreed {
+  background-color: #65b575;
+}
+.bgcolorred {
+  background-color: #dd5c3d;
+}
+footer {
+  width: 100%;
+  background-color: #48c0eb;
+  padding: 0;
+  position: absolute;
+  margin-top: 30px;
+}
+footer #copyright {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  color: #fff;
+  background-color: #32a6c6;
+  padding-right: 10px;
+  text-align: right;
+}
+footer #ussay {
+  color: #fff;
+  padding: 30px 10px 10px 60px;
+}
+footer #ussay h3 {
+  font-size: 200%;
+}
+body {
+  overflow-x: hidden;
+}
+#mascot {
+  width: 50px;
+  height: 2000px;
+  background-color: #2295d4;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+#mascot img {
+  margin-top: 50px;
+}
+header {
+  height: 800px;
+  width: 100%;
+  background-color: #48c0eb;
+}
+header nav {
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+header nav a {
+  padding: 5px 10px;
+  font-size: 120%;
+  margin-left: 10px;
+  background-color: #48c0eb;
+  transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+}
+header nav a:link,
+header nav a:visited,
+header nav a:active {
+  text-decoration: none;
+  color: #fff;
+}
+header nav a:hover {
+  background-color: #86d5f2;
+}
+header h1,
+header h2,
+header h3,
+header h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  text-align: right;
+}
+header #ecText {
+  position: absolute;
+  left: 150px;
+  top: 300px;
+  width: 1200px;
+}
+header #ecText .bannerText {
+  padding-right: 50px;
+  border-right: 1px solid #32a6c6;
+}
+header #ecText .bannerText h1 {
+  font-size: 150%;
+}
+header #ecText .bannerText h2 {
+  font-size: 400%;
+  color: #fff;
+  font-weight: bold;
+}
+header #ecText .bannerText h3 {
+  font-size: 150%;
+  color: #656666;
+}
+header #ecText .bannerText h4 {
+  font-size: 200%;
+  color: #656666;
+}
+header #ecText .bannerBtn {
+  padding: 80px 0 0 50px;
+}
+header #ecText .bannerBtn #cmdNpm {
+  padding: 10px 20px;
+  background-color: #fff;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  font-weight: bold;
+  font-size: 200%;
+  border-radius: 10px;
+}
+header #ecText .bannerBtn #cmdVer {
+  color: #dde9a4;
+  font-size: 150%;
+  font-weight: bold;
+}
+header #ecText .bannerBtn #cmddiv {
+  padding-bottom: 50px;
+}
+header #ecText .bannerBtn p {
+  font-size: 50%;
+  color: #656666;
+  margin: 0;
+  padding-top: 5px;
+}
+.say {
+  min-width: 1200px;
+  width: 80%;
+  padding: 60px;
+  margin: 30px auto;
+}
+.say .speak h1,
+.say .speak h2,
+.say .speak h3,
+.say .speak h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.say .speak h1 {
+  font-size: 250%;
+  font-style: italic ;
+}
+.say .speak h2 {
+  font-size: 180%;
+}
+.say .Whisper {
+  border: 1px solid #eeeeee;
+  padding: 20px;
+  font-size: 120%;
+  color: #fff;
+  text-indent: 40px;
+  -webkit-box-shadow: 0 0 10px #0CC;
+  -moz-box-shadow: 0 0 10px #0CC;
+  box-shadow: 0 0 10px #0CC;
+}
