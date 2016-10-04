@@ -1,0 +1,69 @@
+.wos-header{
+    /*filter:alpha(opacity=10); !*IE滤镜，透明度50%*!*/
+    /*-moz-opacity:10; !*Firefox私有，透明度50%*!*/
+    /*opacity:10;!*其他，透明度50%*!*/
+    position: fixed;
+    top:0px;
+    left: 0px;
+    padding: 0;
+}
+.wos-header-bg{
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    filter:alpha(opacity=20); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.2; /*Firefox私有，透明度50%*/
+    opacity:0.2;/*其他，透明度50%*/
+}
+.wos-header-group{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    margin-top: -50px;
+    padding: 0 10px;
+}
+.wos-header-group a{
+    color: #000;
+}
+.wos-header-icon{
+    height: 35px;
+    width: 35px;
+    line-height:35px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+
+    filter:alpha(opacity=20); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.2; /*Firefox私有，透明度50%*/
+    opacity:0.2;/*其他，透明度50%*/
+}
+.wos-navbar{
+    border-top: 1px solid #ccc;
+    height: 55px;
+    background-color: #fff;
+}
+/*.wos-header a{*/
+/*color: #fff;*/
+/*}*/
+.wos-navbar-btn{
+    border-right: 1px solid #ccc;
+    line-height: 20px;
+    font-size: 75%;
+    padding-top: 10px;
+}
+.wos-navbar-btn i{
+    width: 100%;
+}
+.wos-navbar-btn a{
+    color: #a0a0a0;
+}
+.wos-navbar-buybtn{
+    border-right:0px ;
+    height: 55px;
+}
+.wos-navbar-buycar{
+    font-size: 85%;
+    height: 55px;
+}

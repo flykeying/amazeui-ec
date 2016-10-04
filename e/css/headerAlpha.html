@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>透明页头的使用说明和演示 | ECUI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="参与 Amaze UI 插件大赛的比赛作品">
+    <meta name="keywords" content="AmazeUI,电商UI">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="../../src/images/ico/ico32.ico">
+    <link rel="stylesheet" href="../../lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../src/css/layout-page.css">
+    <link rel="stylesheet" href="../../lib/github-gist.min.css">
+    <script src="../../lib/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../lib/vue/vue.min.js"></script>
+    <link rel="stylesheet" href="css/wos-mobile.css">
+    <script src="../../lib/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="wos">
+        <h1 class="am-fl"><a href="../../index.html">AmazeUI-ec</a></h1>
+        <nav class="am-fr">
+            <a v-for="item of nav" href="{{item.url}}">{{item.name}}</a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="am-g main pagewidth">
+    <div class="am-u-sm-3 menu am-padding-lg">
+        <h1>CSS 扩展</h1>
+        <hr>
+        <div id="cssNav">
+            <ul>
+                <li v-for="item of nav">
+                    <div v-if="item.url == 'headerAlpha.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="../../src/js/nav.js"></script>
+    </div>
+    <div class="am-u-sm-9 info am-padding-lg showMi">
+        <h3>AmazeUI 原始组件样式</h3>
+        <hr>
+        <div id="wos-mobile" style="margin: 0 auto">
+            <iframe id="wos-mobile-mian" src="headerAlpha_temp.html" frameborder="0" scrolling="yes"></iframe>
+        </div>
+        <h3>代码</h3>
+        <p>JS：<a href="js/wos-goods-header-nav.js">wos-goods-header-nav.js</a></p>
+        <p>CSS：<a href="css/wos-goods-header-nav.css">wos-goods-header-nav.css</a></p>
+        <h3>透明页头HTML</h3>
+        <pre><code class="xml">&lt;header data-am-widget="header" class="am-header wos-header"&gt;
+    &lt;div class="wos-header-bg"&gt;&lt;/div&gt;
+    &lt;div class="wos-header-group"&gt;
+        &lt;div class="am-header-left am-header-nav"&gt;
+            &lt;div class="wos-header-icon"&gt;
+                &lt;a href="#"&gt;&lt;i class="am-icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="am-header-right am-header-nav"&gt;
+            &lt;div class="wos-header-icon am-fr"&gt;
+                &lt;a href="#"&gt;&lt;i class="am-icon-th"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="wos-header-icon am-fr"&gt;
+                &lt;a href="#"&gt;&lt;i class="am-icon-shopping-cart"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+        <h3>工具栏HTML</h3>
+        <pre><code class="xml">&lt;div data-am-widget="navbar" class="am-navbar am-cf wos-navbar"&gt;
+    &lt;div class="am-g"&gt;
+        &lt;div class="am-u-sm-2 am-text-center wos-navbar-btn"&gt;
+            &lt;a href="tel:123456789"&gt;
+                &lt;i class="am-icon-phone am-icon-md"&gt;&lt;/i&gt;
+                呼叫
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="am-u-sm-2 am-text-center wos-navbar-btn"&gt;
+            &lt;a href="#"&gt;
+                &lt;i class="am-icon-star-o am-icon-md"&gt;&lt;/i&gt;
+                收藏
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="am-u-sm-2 am-text-center wos-navbar-btn"&gt;
+            &lt;a href="#"&gt;
+                &lt;i class="am-icon-shopping-basket am-icon-md"&gt;&lt;/i&gt;
+                店铺
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="am-u-sm-3 am-text-center am-btn-warning wos-navbar-buycar"&gt;加入购物车&lt;/div&gt;
+        &lt;div class="am-u-sm-3 am-text-center am-btn-danger wos-navbar-buybtn"&gt;立即购买&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+
+<footer>
+    <div id="ussay" class="am-g  pagewidth">
+        <div class="am-u-sm-4">
+            <h3>Help ECUI </h3>
+            <p>我们希望你能享受这种更实用的UI设计！如果你觉得现实中已经得到了我们的帮助，希望支持我们的团队，送我们超过一个捐赠！任何金额将有助于支持和继续在这个项目上的发展，并不胜感激。 </p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>MIT License</h3>
+            <p>ECUI采用了Amaze UI框架，并使用 MIT 许可证发布，用户可以自由使用、复制、修改、合并、出版发行、散布、再授权及贩售 ECUI及其副本。</p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>Heroes</h3>
+            <p>参考、使用的项目：AmazeUI，jQuery, Vue.js, Seajs, Less, normalize.css, FontAwesome, Bootstrap, Foundation, UIKit, Pure, Framework7, etc.</p>
+        </div>
+    </div>
+    <div id="copyright">吉ICP备12003179号-4</div>
+</footer>
+
+</body>
+
+<script src="../../lib/amazeui/amazeui.min.js"></script>
+
+</html>

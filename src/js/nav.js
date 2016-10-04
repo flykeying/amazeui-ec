@@ -4,15 +4,15 @@ var nav = [
         "url":"../getting-started/"
     },
     {
-        "name":"CSS 扩展",
+        "name":"页面组件",
         "url":"../css/"
     },
+    // {
+    //     "name":"产品展示",
+    //     "url":"../shows/"
+    // },
     {
-        "name":"展示扩展",
-        "url":"../shows/"
-    },
-    {
-        "name":"功能扩展",
+        "name":"功能组件",
         "url":"../fun/"
     }
 ];
@@ -74,6 +74,14 @@ var cssNav = [
         "name":"基础搜索框",
         "url":"search.html"
     },
+    {
+        "name":"手机展示",
+        "url":"mobile.html"
+    },
+    {
+        "name":"透明页头",
+        "url":"headerAlpha.html"
+    }
 ];
 new Vue({
     el: '#cssNav',

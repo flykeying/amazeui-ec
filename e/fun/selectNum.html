@@ -57,7 +57,7 @@
         <button type="button" class="am-btn am-btn-default am-fl wos-selectNum-btn"  @click="reduce" id="reduce">-</button>
         <input v-model="goodsNum" maxlength="4" type="text" class="am-fl wos-selectNum-text" onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"/>
         <button type="button" class="am-btn am-fl am-btn-default wos-selectNum-btn" @click="plus" id="plus">+</button>
-        <span>件（库存2299件）</span>
+        <span>件（库存{{Stock}}件）</span>
     </div>
 </template>
 <script>

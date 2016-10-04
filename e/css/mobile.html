@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ECUI-电商平台的交互UI</title>
+    <title>手机参考样式 | ECUI</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="参与 Amaze UI 插件大赛的比赛作品">
     <meta name="keywords" content="AmazeUI,电商UI">
@@ -19,6 +19,8 @@
     <script src="../../lib/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="../../lib/vue/vue.min.js"></script>
+    <script src="../../lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/wos-mobile.css">
 </head>
 <body>
 <header>
@@ -27,26 +29,43 @@
         <nav class="am-fr">
             <a v-for="item of nav" href="{{item.url}}">{{item.name}}</a>
         </nav>
+
     </div>
 </header>
 
 <div class="am-g main pagewidth">
     <div class="am-u-sm-3 menu am-padding-lg">
-        <h1>展示扩展</h1>
+        <h1>CSS 扩展</h1>
         <hr>
-        <div id="menuShows">
+        <div id="cssNav">
             <ul>
                 <li v-for="item of nav">
-                    <a href="{{item.url}}">{{item.name}}</a>
+                    <div v-if="item.url == 'mobile.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
                 </li>
             </ul>
         </div>
         <script src="../../src/js/nav.js"></script>
     </div>
     <div class="am-u-sm-9 info am-padding-lg showMi">
-        <p>产品展示：提供了丰富的产品展示UI效果，所有代码基于AmazeUI并扩展了样式表。</p>
-        <h3>安装</h3>
-        <p>每个展示效果提供单独css样式。方便整合。前缀都为“wos-”。组件沿用AmazeUI的开发习惯，移动优先的策略。</p>
+        <h3>手机展示</h3>
+        <p>用于展示手机客户端的页面，默认尺寸375*667 （iphone6尺寸）</p>
+        <hr>
+        <div id="wos-mobile"  style="margin: 0 auto">
+            <iframe id="wos-mobile-mian" src="http://amazeui.org/" frameborder="0" scrolling="yes"></iframe>
+        </div>
+        <hr>
+        <h3 style="clear: both;">代码</h3>
+        <p>第一步：<a href="css/wos-mobile.css">css 样式下载</a> </p>
+        <p>第二步：部署下面的代码。默认尺寸:375*667 px</p>
+            <pre><code class="xml">&lt;div id="wos-mobile"&gt;
+&lt;iframe id="wos-mobile-mian" src="http://amazeui.org/" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
     </div>
 </div>
 
@@ -69,7 +88,7 @@
 </footer>
 
 </body>
-<script src="../../lib/jquery.min.js"></script>
-<script src="../../lib/amazeui/js/amazeui.min.js"></script>
+
+<script src="../../lib/amazeui/amazeui.min.js"></script>
 
 </html>
