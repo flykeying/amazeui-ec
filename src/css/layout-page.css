@@ -36,9 +36,20 @@ footer #ussay {
 footer #ussay h3 {
   font-size: 200%;
 }
+body {
+  padding-top: 55px;
+}
 header {
-  height: 50px;
+  height: 55px;
   background-color: #48c0eb;
+  -webkit-box-shadow: 2px 2px 5px #ccc;
+  -moz-box-shadow: 2px 2px 5px #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
 }
 header .wos {
   margin: 0 auto;
@@ -56,7 +67,7 @@ header .wos nav {
   padding-top: 10px;
 }
 header .wos nav a {
-  padding: 11px 10px;
+  padding: 16px 10px;
   font-size: 120%;
   margin-left: 10px;
   background-color: #48c0eb;
@@ -132,7 +143,7 @@ li {
   border-left: 1px solid #f7f7f7 ;
 }
 .showMi {
-  min-height: 1500px;
+  min-height: 565px;
   float: right;
   width: 880px;
 }

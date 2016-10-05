@@ -1,6 +1,6 @@
 {
   "name": "amazeui-ec",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "专注于电商平台的交互UI框架",
   "main": "index.js",
   "scripts": {

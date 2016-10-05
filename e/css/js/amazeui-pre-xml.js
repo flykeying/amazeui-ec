@@ -1,0 +1,9 @@
+$(function(){
+    //pre标签支持html
+    $('.xml').each(function(){
+        tempHtml=$(this).html();
+        tempHtml=tempHtml.replace(/</g,'&lt;');
+        tempHtml=tempHtml.replace(/>/g,'&gt;');
+        $(this).html(tempHtml);
+    })
+});

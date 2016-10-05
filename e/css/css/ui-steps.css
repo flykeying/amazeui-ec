@@ -1,0 +1,51 @@
+.am-steps {
+  height: 55px;
+}
+.am-steps .am-steps-default {
+  background-color: #555555;
+}
+.am-steps .am-steps-primary {
+  background-color: #0e90d2;
+}
+.am-steps .am-steps-secondary {
+  background-color: #3bb4f2;
+}
+.am-steps .am-steps-success {
+  background-color: #5eb95e;
+}
+.am-steps .am-steps-warning {
+  background-color: #F37B1D;
+}
+.am-steps .am-steps-danger {
+  background-color: #dd514c;
+}
+.am-steps .am-steps-gray {
+  background-color: #eeeeee;
+  color: #fff;
+}
+body {
+  overflow-x: hidden;
+  /**处理步骤文字过长产生的横向滚动条**/
+}
+.am-steps-circle div {
+  height: 10px;
+}
+.am-steps-circle span {
+  position: absolute;
+  z-index: 2;
+  margin-top: -24px;
+  border: 5px solid #ffffff;
+  line-height: 40px;
+  cursor: pointer;
+}
+.am-steps-circle .am-steps-text {
+  font-size: 1.2rem;
+  position: static;
+  text-align: left;
+  margin-left: -30px;
+  width: 500px;
+  /**这个可能导致页面出现横向边距**/
+}
+.am-steps-circle .am-text-black {
+  color: #000;
+}

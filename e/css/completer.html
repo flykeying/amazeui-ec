@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动补全插件-电商平台的交互UI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="参与 Amaze UI 插件大赛的比赛作品">
+    <meta name="keywords" content="AmazeUI,电商UI">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="../../src/images/ico/ico32.ico">
+    <link rel="stylesheet" href="../../lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../src/css/layout-page.css">
+    <link rel="stylesheet" href="../../lib/github-gist.min.css">
+    <script src="../../lib/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../lib/vue/vue.min.js"></script>
+    <link rel="stylesheet" href="css/ui.completer.css">
+
+</head>
+<body>
+<header>
+    <div class="wos">
+        <h1 class="am-fl"><a href="../../index.html">AmazeUI-ec</a></h1>
+        <nav class="am-fr">
+            <a v-for="item of nav" href="{{item.url}}">{{item.name}}</a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="am-g main pagewidth">
+    <div class="am-u-sm-3 menu am-padding-lg">
+        <h1>自动补全插件</h1>
+        <hr>
+        <div id="cssNav">
+            <ul>
+                <li v-for="item of nav">
+                    <div v-if="item.url == 'completer.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="../../src/js/nav.js"></script>
+    </div>
+    <div class="am-u-sm-9 info am-padding-lg showMi">
+        <h3>步骤条</h3>
+
+        <form class="am-form">
+            <fieldset>
+                <legend>表单标题</legend>
+
+                <div class="am-form-group">
+                    <label for="doc-ipt-1">1.1 邮件</label>
+                    <input type="email" class="" id="doc-ipt-1" placeholder="输入电子邮件">
+                </div>
+
+<pre class="am-pre-xml am-pre-scrollable"><code class="xml">&lt;div class="am-form-group"&gt;
+    &lt;label for="doc-ipt-1"&gt;邮件&lt;/label&gt;
+    &lt;input type="email" class="" id="doc-ipt-1" placeholder="输入电子邮件"&gt;
+&lt;/div&gt;
+
+$("#doc-ipt-1").completer({
+separator: "@",
+source: ["163.com", "qq.com", "126.com", "139.com", "gmail.com", "hotmail.com", "icloud.com"]
+});</code></pre>
+
+
+                <div class="am-form-group">
+                    <label for="doc-ipt-2">1.2 时间</label>
+                    <input type="email" class="" id="doc-ipt-2" placeholder="输入时间">
+                </div>
+<pre class="am-pre-xml am-pre-scrollable"><code class="xml">&lt;div class="am-form-group"&gt;
+    &lt;label for="doc-ipt-2"&gt;时间&lt;/label&gt;
+    &lt;input type="email" class="" id="doc-ipt-2" placeholder="输入时间"&gt;
+&lt;/div&gt;
+
+$("#doc-ipt-2").completer({
+    filter: function(val) {
+    val = val.replace(/\D/g, "").substr(0, 2);
+
+    if (val) {
+    val = parseInt(val, 10) || 0;
+    val = val &gt; 23 ? 23 : val &lt; 10 ? "0" + val : val;
+    }
+
+    return val;
+    },
+    separator: ":",
+    source: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]
+});
+</code></pre>
+
+                <label for="doc-ipt-2">1.3 域名</label>
+                <div class="am-input-group">
+                    <span class="am-input-group-label">www</span>
+                    <input type="text" class="am-form-field" id="doc-ipt-3" placeholder="请输入根域名，不含www">
+                </div>
+<pre class="am-pre-xml am-pre-scrollable"><code class="xml">&lt;div class="am-input-group"&gt;
+    &lt;span class="am-input-group-label"&gt;www&lt;/span&gt;
+    &lt;input type="text" class="am-form-field" id="doc-ipt-3" placeholder="请输入根域名，不含www"&gt;
+&lt;/div&gt;
+
+var $autoCompleteDomain = $("#doc-ipt-3"),
+$autoCompleteGo = $("#doc-ipt-3");
+$autoCompleteDomain.completer({
+    complete: function() {
+        var url = "http://www." + $autoCompleteDomain.val();
+        $autoCompleteGo.attr("href", url);
+    },
+    separator: ".",
+    source: ["com", "net", "org", "co", "io", "me", "cn", "com.cn"]
+});
+</code></pre>
+
+                <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+
+<footer>
+    <div id="ussay" class="am-g  pagewidth">
+        <div class="am-u-sm-4">
+            <h3>Help ECUI </h3>
+            <p>我们希望你能享受这种更实用的UI设计！如果你觉得现实中已经得到了我们的帮助，希望支持我们的团队，送我们超过一个捐赠！任何金额将有助于支持和继续在这个项目上的发展，并不胜感激。 </p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>MIT License</h3>
+            <p>ECUI采用了Amaze UI框架，并使用 MIT 许可证发布，用户可以自由使用、复制、修改、合并、出版发行、散布、再授权及贩售 ECUI及其副本。</p>
+        </div>
+        <div class="am-u-sm-4">
+            <h3>Heroes</h3>
+            <p>参考、使用的项目：AmazeUI，jQuery, Vue.js, Seajs, Less, normalize.css, FontAwesome, Bootstrap, Foundation, UIKit, Pure, Framework7, etc.</p>
+        </div>
+    </div>
+    <div id="copyright">吉ICP备12003179号-4</div>
+</footer>
+
+</body>
+<script src="../../lib/jquery.min.js"></script>
+<script src="../../lib/amazeui/js/amazeui.min.js"></script>
+<script src="js/ui.completer.min.js"></script>
+<script>
+    $(function(){
+        //邮箱
+        $("#doc-ipt-1").completer({
+            separator: "@",
+            source: ["163.com", "qq.com", "126.com", "139.com", "gmail.com", "hotmail.com", "icloud.com"]
+        });
+        //时间
+        $("#doc-ipt-2").completer({
+            filter: function(val) {
+                val = val.replace(/\D/g, "").substr(0, 2);
+
+                if (val) {
+                    val = parseInt(val, 10) || 0;
+                    val = val > 23 ? 23 : val < 10 ? "0" + val : val;
+                }
+
+                return val;
+            },
+            separator: ":",
+            source: ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]
+        });
+        //域名
+        var $autoCompleteDomain = $("#doc-ipt-3"),
+                $autoCompleteGo = $("#doc-ipt-3");
+        $autoCompleteDomain.completer({
+            complete: function() {
+                var url = "http://www." + $autoCompleteDomain.val();
+
+                $autoCompleteGo.attr("href", url);
+            },
+            separator: ".",
+            source: ["com", "net", "org", "co", "io", "me", "cn", "com.cn"]
+        });
+
+    });
+</script>
+</html>

@@ -1,0 +1,33 @@
+.completer-container {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: normal;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: #15afef;
+}
+.completer-container li {
+  padding: .5em .8em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #eeeeee;
+}
+.completer-container .completer-selected,
+.completer-container .completer-container li:hover {
+  margin-left: -1px;
+  background-color: #15afef;
+  border-left: 1px solid #15afef;
+  border-right: 1px solid #15afef;
+  color: #fff;
+}

@@ -1,7 +1,18 @@
 @import 'constant.less';
+body{
+  padding-top: 55px;
+}
 header{
-  height: 50px;
+  height: 55px;
   background-color: @master-color;
+  -webkit-box-shadow:2px 2px 5px #ccc;
+  -moz-box-shadow:2px 2px 5px #ccc;
+  box-shadow:2px 2px 5px #ccc;
+  position: fixed;
+  top: 0px;
+  left:0px;
+  width: 100%;
+  z-index: 999;
   .wos{
     margin: 0 auto;
     height: 30px;
@@ -16,7 +27,7 @@ header{
     nav{
       padding-top: 10px;
       a{
-        padding:11px 10px;
+        padding:16px 10px;
         font-size: 120%;
         margin-left: 10px;
         background-color: @master-color;
@@ -92,7 +103,7 @@ ul,li{
   }
 }
 .showMi{
-  min-height: 1500px;
+  min-height: 565px;
   float: right;
   width: 880px;
 }

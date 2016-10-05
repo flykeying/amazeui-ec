@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ECUI-电商平台的交互UI</title>
+    <title>密码强度检测-电商平台的交互UI</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="参与 Amaze UI 插件大赛的比赛作品">
     <meta name="keywords" content="AmazeUI,电商UI">
@@ -19,6 +19,8 @@
     <script src="../../lib/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="../../lib/vue/vue.min.js"></script>
+    <link rel="stylesheet" href="css/am-passwd.css">
+
 </head>
 <body>
 <header>
@@ -33,32 +35,57 @@
 
 <div class="am-g main pagewidth">
     <div class="am-u-sm-3 menu am-padding-lg">
-        <h1>开始使用</h1>
-        <p>感谢以下开源项目</p>
+        <h1>CSS 扩展</h1>
         <hr>
-        <ul>
-            <li><a href="https://github.com/jquery/jquery">jQuery</a></li>
-            <li><a href="https://github.com/vuejs/vue">Vue.js</a></li>
-            <li><a href="https://github.com/amazeui/amazeui">AmazeUI</a></li>
-        </ul>
+        <div id="cssNav">
+            <ul>
+                <li v-for="item of nav">
+                    <div v-if="item.url == 'pwdcheck.html'">
+                        <a href="{{item.url}}" class="bti">{{item.name}}</a>
+                    </div>
+                    <div v-else>
+                        <a href="{{item.url}}">{{item.name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
         <script src="../../src/js/nav.js"></script>
     </div>
-    <div class="am-u-sm-9 info am-padding-lg showMi" >
-        <h3>介绍</h3>
-
-
-
-        <p>专注于电商平台的交互UI框架，框架采用AmazeUI框架为蓝本， 以插件库的形式部署ECUI组件。请使用者优先熟悉AmazeUI框架。 ECUI继承采用了Vuejs进行构建，每个组件面向的都是数据模型。尽量兼容AmazeUI jQuery组件和写法。</p>
-        <p>注意：ECUI的组件属于电商环境，将不再考虑响应式、移动优先的策略。组件分为移动版和PC版两个部分</p>
-        <ul>
-            <li>每一个组件的开发都要最大程度的满足访问者的使用习惯和操作的流畅性。以用户的感受来评判组件的实用性。不需要漂亮炫耀的组件，只要温文尔雅的工具。</li>
-            <li>更贴近后端的程序架构设计，所有数据json化处理。让UI更符合实战需求。</li>
-            <li>继承了来自AmazeUI的框架标准，在原有的基础上Vue组件化。对数据响应，单向数据流和双向数据绑定优势更突出。</li>
-        </ul>
-        <hr>
-        <p>GIT: https://github.com/flykeying/amazeui-ec.git</p>
-        <p>NPM: install amazeui-ecui</p>
-
+    <div class="am-u-sm-9 info am-padding-lg showMi">
+        <h3>密码强度演示</h3>
+        <form class="am-form">
+            <fieldset>
+                <div class="am-form-group">
+                    <label for="doc-ipt-pwd-1">密码</label>
+                    <input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+                    <div class="am-pw-strength">
+                        <div class="am-pw-bar"></div>
+                        <div class="am-pw-bar-on"></div>
+                    </div>
+                </div>
+                <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+            </fieldset>
+        </form>
+        <p>最高等级的密码包含（大写字母，数字，小写字母）</p>
+        <h3>引用</h3>
+        <p>
+            JS: <a href="js/am-passwd.js">am-passwd.js</a><br>
+            CSS: <a href="css/am-passwd.css">am-passwd.css</a>
+        </p>
+        <h3>代码</h3>
+<pre><code class="xml">&lt;form class="am-form"&gt;
+  &lt;fieldset&gt;
+    &lt;div class="am-form-group"&gt;
+      &lt;label for="doc-ipt-pwd-1"&gt;密码&lt;/label&gt;
+      &lt;input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧"&gt;
+      &lt;div class="am-pw-strength"&gt;
+        &lt;div class="am-pw-bar"&gt;&lt;/div&gt;
+        &lt;div class="am-pw-bar-on"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;button type="submit" class="am-btn am-btn-default"&gt;提交&lt;/button&gt;&lt;/p&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
     </div>
 </div>
 
@@ -82,6 +109,7 @@
 
 </body>
 <script src="../../lib/jquery.min.js"></script>
-<script src="../../lib/amazeui/js/amazeui.min.js"></script>
 
+<script src="../../lib/amazeui/js/amazeui.min.js"></script>
+<script src="js/am-passwd.js"></script>
 </html>

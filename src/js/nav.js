@@ -81,6 +81,22 @@ var cssNav = [
     {
         "name":"透明页头",
         "url":"headerAlpha.html"
+    },
+    {
+        "name":"密码强度检测",
+        "url":"pwdCheck.html"
+    },
+    {
+        "name":"步骤条",
+        "url":"steps.html"
+    },
+    {
+        "name":"隐藏式分页",
+        "url":"pagination.html"
+    },
+    {
+        "name":"自动补全插件",
+        "url":"completer.html"
     }
 ];
 new Vue({
@@ -89,16 +105,16 @@ new Vue({
         nav:cssNav
     }
 });
-var menuShows = [
-    {
-        "name":"未知",
-        "url":"#"
-    }
-];
-new Vue({
-    el: '#menuShows',
-    data:{
-        nav:menuShows
-    }
-});
+// var menuShows = [
+//     {
+//         "name":"未知",
+//         "url":"#"
+//     }
+// ];
+// new Vue({
+//     el: '#menuShows',
+//     data:{
+//         nav:menuShows
+//     }
+// });
 

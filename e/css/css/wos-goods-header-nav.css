@@ -35,18 +35,18 @@
     margin-top: 10px;
     margin-right: 5px;
 
-    filter:alpha(opacity=20); /*IE滤镜，透明度50%*/
-    -moz-opacity:0.2; /*Firefox私有，透明度50%*/
-    opacity:0.2;/*其他，透明度50%*/
+    filter:alpha(opacity=20);
+    -moz-opacity:0.2;
+    opacity:0.2;
 }
 .wos-navbar{
     border-top: 1px solid #ccc;
     height: 55px;
     background-color: #fff;
 }
-/*.wos-header a{*/
-/*color: #fff;*/
-/*}*/
+
+
+
 .wos-navbar-btn{
     border-right: 1px solid #ccc;
     line-height: 20px;
@@ -59,11 +59,16 @@
 .wos-navbar-btn a{
     color: #a0a0a0;
 }
+.wos-navbar-buycar{
+    font-size: 95%;
+    height: 55px;
+    border-right:0px ;
+    line-height: 55px;
+    padding: 0;
+}
 .wos-navbar-buybtn{
+    font-size: 95%;
     border-right:0px ;
     height: 55px;
-}
-.wos-navbar-buycar{
-    font-size: 85%;
-    height: 55px;
+    line-height: 55px;
 }
